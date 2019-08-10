@@ -55,5 +55,3 @@ def snippet_detail(request,pk):
     elif(request.method=='DELETE'):
         snippet.delete()
         return HttpResponse(status=204) #204表示无内容，服务器成功处理了请求，但是没有返回任何内容
-
-        
