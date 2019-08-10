@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<h2>BlogPosts</h2>
+<ul>
+{% for blogpost in object_list %}
+<li>{{ blogpost }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
+</body>
+</html>
