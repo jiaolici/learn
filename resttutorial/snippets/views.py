@@ -5,11 +5,14 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.core.exceptions import ObjectDoesNotExist
+from rest_framework import permissions
+from snippets.permissions import IsOwnerOrReadOnly
 
 class SnippetList(APIView):
     """
     列出所有的snippets或者创建一个新的snippet。
     """
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     def get(self, request, format=None):
         snippets = Snippet.objects.all()
         serializer = SnippetSerializer(snippets, many=True)
@@ -29,6 +32,7 @@ class SnippetDetail(APIView):
     """
     检索，更新或删除一个snippet示例。
     """
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly)
     def get_object(self, pk):
         try:
             return Snippet.objects.get(pk=pk)
