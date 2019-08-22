@@ -35,6 +35,7 @@ def login(request):
         return HttpResponse("bad")
 
 def test(request):
+    print(type(request))
     posts = BlogPost.objects.all()
     return JsonResponse({"msg":list(posts.values())})
 
