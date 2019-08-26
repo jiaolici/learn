@@ -13,43 +13,29 @@ from rest_framework import generics
 from rest_framework.reverse import reverse
 from rest_framework.decorators import api_view
 from rest_framework import renderers
+from rest_framework import viewsets
+from rest_framework.decorators import action
 
-@api_view(['GET'])
-def api_root(request,format=None):
-    return Response({'users':reverse('user-list',request=request,format=format),
-    'snippets':reverse('snippet-list',request=request,format=format)})
-
-class SnippetCode(generics.GenericAPIView):
+class SnippetViewSet(viewsets.ModelViewSet):
+    """
+    此视图自动提供`list`，`create`，`retrieve`，`update`和`destroy`操作。
+    另外我们还提供了一个额外的`highlight`操作。
+    """
     queryset = Snippet.objects.all()
-    renderer_classes = (renderers.StaticHTMLRenderer,)
+    serializer_class = SnippetSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
 
-    def get(self,request,*args,**kwargs):
+    @action(renderer_classes=[renderers.StaticHTMLRenderer],methods=['get'],detail=True)
+    def code(self,request,*args,**kwargs):
         snippet = self.get_object()
         return Response(snippet.code)
+    
+    def perform_create(self,serializer):
+        serializer.save(owner = self.request.user)
 
-class SnippetList(generics.ListCreateAPIView):
+class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    列出所有的snippets或者创建一个新的snippet。
-    """
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = Snippet.objects.all()
-    serializer_class = SnippetSerializer
-
-    def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
-
-class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
-    """
-    检索，更新或删除一个snippet示例。
-    """
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly)
-    queryset = Snippet.objects.all()
-    serializer_class = SnippetSerializer
-
-class UserList(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-class UserDetail(generics.RetrieveAPIView):
+    此视图自动提供`list`和`detail`操作。
+    """
     queryset = User.objects.all()
     serializer_class = UserSerializer
