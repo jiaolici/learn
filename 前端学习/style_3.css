@@ -1,0 +1,45 @@
+.title
+{
+    color:azure;
+    background-color: grey;
+    padding:20px
+}
+.title-text
+{
+    margin-left: 20px;
+}
+.info-item
+{
+    display: flex;
+}
+.info-header
+{
+    background-color: lightgray;
+    padding: 40px;
+    margin: 0px;
+    border: 1px solid azure;
+    border-right: none;
+}
+.info-detail
+{
+    border: 1px solid lightgray;
+    margin: 0px;
+    padding: 10px;
+    flex-grow: 1;
+}
+.horizontal span
+{
+    margin-right: 40px;
+}
+.horizontal span b
+{
+    margin-right: 20px;
+}
+.horizontal span
+{
+    margin-right: 40px;
+}
+.vertical span
+{
+    display: block;
+}
