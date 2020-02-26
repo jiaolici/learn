@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style_3.css">
+        <style>
+        header{
+            background-color: darkslategray;
+            height: 50px;
+        }
+        header div{
+            width: 960px;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        header div h2{
+            color: floralwhite;
+            margin: auto;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        header div nav a{
+            color: floralwhite;
+        }
+        footer{
+            background-color: dimgray;
+            height: 100px;
+            margin-top: 10px;
+            padding-top: 10px;
+            color: snow;
+            font-size: 10px;
+            text-align: center;
+        }
+        .banner{
+            height: 400px;
+            background-color:mediumseagreen;
+        }
+        .number{
+            width: 960px;
+            margin: auto;
+            height: 100%;
+            display: flex;
+            justify-content: end;
+            align-items: flex-end;
+        }
+        .number span{
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            margin: 2px;
+            margin-bottom: 8px;
+            border: 1px solid grey;
+            background-color: rgb(133, 177, 45);
+            color: grey;
+        }
+        .selected-number{
+            height: 40px !important; 
+            box-sizing: border-box;
+            padding-top: 18px;
+            background-color:lightgray !important;
+        }
+        .main-nav{
+            border-bottom: 1px solid slategray;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .main-nav nav{
+            width: 960px;
+            margin: auto;
+            height: 50px;
+            font-size: 0px;
+        }
+        .main-nav nav a{
+            background-color: lightgray;
+            color:lightslategray;
+            border: 1px solid slategray;
+            border-bottom: none;
+            border-top-left-radius: 25%;
+            border-top-right-radius: 25%;
+            display: inline-block;
+            height: 100%;
+            width: 100px;
+            text-align: center;
+            padding:10px;
+            padding-top: 15px;
+            box-sizing: border-box;
+            text-decoration:none;
+            font-size: 16px;
+        }
+        .selected-nav{
+            background-color: snow !important;
+        }
+        .main-content{
+            display: flex;
+            width: 960px;
+            margin: auto;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-content:stretch;
+            margin-bottom: 10px;
+        }
+        .main-content div{
+            margin-bottom: 10px;
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div>
+                <h2>Logo</h2>
+                <nav>
+                    <a href="#">Github</a>
+                    <a href="#">Register</a>
+                    <a href="#">Login</a>
+                </nav>
+            </div>
+        </header>
+        <div class="banner">
+            <div class="number">
+                <span>1</span>
+                <span class="selected-number">2</span>
+                <span>3</span>
+                <span>4</span>
+            </div>
+        </div>
+        <div class="main-nav">
+            <nav>
+                <a href="#" class="selected-nav">HOME</a>
+                <a href="#">PROFILE</a>
+                <a href="#">ABOUT</a>
+            </nav>
+        </div>
+        <div class="main-content">
+            <div style="width: 300px;height: 250px;border: 1px solid slategray;"></div>
+            <div style="width: 300px;height: 250px;border: 1px solid slategray;"></div>
+            <div style="width: 280px;height: 250px;border: 1px solid slategray;"></div>
+            <div style="width: 280px;height: 250px;border: 1px solid slategray;"></div>
+            <div style="width: 280px;height: 250px;border: 1px solid slategray;"></div>
+            <div style="width: 280px;height: 250px;border: 1px solid slategray;"></div>
+            <div style="width: 280px;height: 250px;border: 1px solid slategray;"></div>
+            <div style="width: 280px;height: 250px;border: 1px solid slategray;"></div>
+            <div style="width: 280px;height: 250px;border: 1px solid slategray;"></div>
+            <div style="width: 280px;height: 250px;border: 1px solid slategray;"></div>
+        </div>
+        <footer>
+            © 2018 ife.baidu.com
+        </footer>
+    </body>
+</html>
