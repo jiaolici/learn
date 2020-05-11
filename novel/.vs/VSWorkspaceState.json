@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\page",
+    "\\src\\router",
+    "\\src\\style",
+    "\\static",
+    "\\static\\bootstrap-3.3.7-dist",
+    "\\static\\bootstrap-3.3.7-dist\\css"
+  ],
+  "SelectedNode": "\\src\\components\\NovelOption.vue",
+  "PreviewInSolutionExplorer": false
+}
