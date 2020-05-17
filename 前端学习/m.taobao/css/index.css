@@ -1,0 +1,37 @@
+body{
+    margin:0 auto;
+    min-width:320px;
+    max-width:640px;
+    background:#fff;
+    font-size:14px;
+    font-family:-app-system,Helvetica,san-serif;
+    line-height:1.5;
+    color:#666;
+}
+header{
+    background-color: rgb(255, 133, 42);
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: 27px 20px;
+    background-position: 9px center;
+    height:37px;
+    box-sizing: border-box;
+    padding: 6px 9px 6px 42px;
+}
+header a{
+    background-color: rgb(255, 78, 34);
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+}
+header a span{
+    line-height: 25px;
+    font-size: 13px;
+    color: rgb(240, 224, 220);
+    display: inline-block;
+
+}
+header a span ::before{
+    content: '\E600';
+    
+}

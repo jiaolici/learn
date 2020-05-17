@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.div{
+				width: 960px;
+                margin:50px auto;
+                overflow: hidden;
+             }
+    		 .top2, .bottom2, .top3, .bottom3{
+                height: 1px;
+                background:blue;
+                overflow: hidden;
+             }
+       		 .top1, .bottom1{
+                margin: 0px 5px;
+                border-top: solid 1px black;
+                border-left: solid 1px black;
+                border-right: solid 1px black;
+             }
+      		 .top2, .bottom2{
+                margin: 0px 3px;
+                border-left: solid 1px black;
+                border-right: solid 1px black;
+             }
+       		 .top3, .bottom3{
+                margin: 0px 1px;
+                border-left: solid 1px black;
+                border-right: solid 1px black;
+             }
+
+      		 .main{
+                height: 100%;
+                border-left: solid 1px black;
+                border-right: solid 1px black;
+                background:blue;
+             }
+		</style>
+	</head>
+	<body>
+  <div class="div">
+    <div class="top1"></div>
+    <div class="top2"></div>
+    <div class="top3"></div>
+    <div class="main">
+          有的圆角矩形是复杂图案，无法直接用border-radius，请在不使用border-radius的
+情况下实现一个可复用的高度和宽度都自适应的圆角矩形
+    </div>
+    <div class="bottom3"></div>
+    <div class="bottom2"></div>
+    <div class="bottom1"></div>
+  </div>
+	</body>
+</html>

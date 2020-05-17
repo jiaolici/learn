@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .div1{
+                height: 100px;
+                width: 100px;
+                background-color: aquamarine;
+                border:1px solid black;
+            }
+            .box{
+                width: 500px;
+                height: 700px;
+                border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "box" class="box">
+            <div id = "div1" class="div1">
+                1
+            </div>
+            <div id = "div2" class="div1">
+                2
+            </div>
+        </div>
+    </body>
+    <script>
+        document.addEventListener("mousedown",mousedownhandler,true);
+        document.addEventListener("mousemove",mousemovehandler,true);
+        document.addEventListener("mouseup",mouseuphandler,true);
+        function mousedownhandler(){
+            var target = event.target;
+            var currentTarget = event.currentTarget;
+            if(target.className == "div1"){
+                currentTarget.mousepositionX = event.screenX;
+                currentTarget.mousepositionY = event.screenY;
+                currentTarget.movingitem = target;
+                currentTarget.movingitemoffsetleft = target.offsetLeft;
+                currentTarget.movingitemoffsettop = target.offsetTop;
+                target.style.position = "absolute";
+                target.style.left = target.offsetleft;
+                target.style.top = target.offsetleft;
+                //target.style.zIndex = 100;
+            }
+        }
+        function mousemovehandler(){
+            
+            var target = event.target;
+            var currentTarget = event.currentTarget;
+            
+            if(currentTarget.movingitem==null){
+                return;
+            }
+            console.log(target,currentTarget);
+            var movingitem = currentTarget.movingitem;
+            var offsetX = event.screenX-currentTarget.mousepositionX;
+            var offsetY = event.screenY-currentTarget.mousepositionY;
+            var left = parseInt(currentTarget.movingitemoffsetleft);
+            var top = parseInt(currentTarget.movingitemoffsettop);
+            movingitem.style.left = left+offsetX+"px";
+            movingitem.style.top = top+offsetY+"px";
+        }
+        function mouseuphandler(){
+            var target = event.target;
+            var currentTarget = event.currentTarget;
+            var movingitem = currentTarget.movingitem;
+            currentTarget.movingitem = null;
+            //target.style.zIndex = null;
+        }
+    </script>
+</html>

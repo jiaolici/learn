@@ -1,0 +1,141 @@
+html{
+    height: 100%;
+}
+body{
+    overflow-y:hidden;
+    height: 100%;
+    padding-top: 50px;
+    margin: 0;
+    position: relative;
+    box-sizing: border-box;
+}
+header{
+    background-color: lightgray;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0px;
+
+}
+header h2{
+    margin: auto;
+    color: gray;
+    margin-left: 10px;
+}
+.main-content{
+    height: 100%;
+    display: flex;
+}
+.type-content{
+    height: 100%;
+    min-width: 200px;
+    max-width: 400px;
+    width: 300px;
+    background-color: oldlace;
+    border-right: 1px solid lightgray;
+    position: relative;
+}
+.add{
+    border-top: 1px solid lightgray;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.tasklist-content{
+    height: 100%;
+    min-width: 250px;
+    width: 300px;
+    background-color: aliceblue;
+    border-right: 1px solid lightgray;
+    position: relative;
+}
+.task-detail{
+    background-color: aliceblue;
+    flex-grow: 1;
+    min-width: 500px;
+}
+.all-task{
+    padding: 10px;
+}
+.type-task{
+    padding: 10px;
+}
+.type-item{
+    padding-left: 10px;
+}
+.type-item ul{
+    margin: 0px;
+    padding: 0px;
+    display: none;
+}
+.type-choosed ul{
+    display: block !important;
+}
+.type-item ul li{
+    list-style: none;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 40px;
+}
+.subtype-choosed{
+    background-color: aliceblue;
+}
+.state{
+    height: 40px;
+    background-color: oldlace;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+}
+.state span{
+    display: block;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 20px;
+}
+.state-choosed{
+    border: 1px solid lightgray;
+    background-color: aliceblue;
+}
+.task-list{
+    margin: 0px;
+    padding: 0px;
+}
+.task-list li{
+    list-style: none;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 40px;
+}
+.date{
+    background-color: #e6d8d8;
+    padding-left: 20px !important;
+}
+.task-choosed{
+    background-color: oldlace;
+}
+.task-header{
+    background-color: oldlace;
+    height: 50px;
+    border-bottom: 1px solid lightgray;
+}
+.task-header h3{
+    margin: 0px;
+    margin-left: 20px;
+    line-height: 50px;
+}
+.task-date{
+    background-color: #e6d8d8;
+    height: 50px;
+    border-bottom: 1px solid lightgray;
+    line-height: 50px;
+    padding-left: 20px;
+}
+.task-content{
+    padding:20px;
+}
