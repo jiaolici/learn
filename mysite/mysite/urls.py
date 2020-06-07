@@ -31,5 +31,6 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls')),
     url(r'^', include(router.urls)),
     #url(r'^page/(?P<page_input>\d{1,2})/$', views.page,{'another':'另一个参数'}),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^lucifermusic/',include('lucifermusic.urls'))
 ]

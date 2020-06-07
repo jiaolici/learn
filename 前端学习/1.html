@@ -4,24 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .box{
-            height: 300px;
-            background-color: gray;
-            padding-left: 200px;
-        }
-        .left{
-            width: 100px;
-            background-color: yellow;
-            height: 100%;
-            margin-left: -100px;
-            float: left;
-        }
-    </style>
+    <script src="vue.min.js"></script>
 </head>
 <body>
-    <div class="box">
-        <div class="left"></div>
+    <div id="app1">
+      <p>{{sharedState.a}}</p>
+      <button @click="add">app1增加1</button>
     </div>
+    <div id="app2">
+      <p>{{sharedState.a}}</p>
+      <button @click="add">app2增加1</button>
+    </div>
+    <script>
+      var store = {
+        debug: true,
+        state: {
+          a: 1
+        },
+        setMessageAction (newValue) {
+          if (this.debug) console.log('setMessageAction triggered with', newValue)
+          this.state.message = newValue
+        },
+        clearMessageAction () {
+          if (this.debug) console.log('clearMessageAction triggered')
+          this.state.message = ''
+        }
+      }
+      var sourceOfTruth = {a:1}
+      var vmA = new Vue({
+        el:"#app1",
+        data:{
+          sharedState:store.state
+        },
+        methods:{
+          add:function(){
+            this.sharedState.a+=1;
+          }
+        }
+      });
+      var vmB = new Vue({
+        el:"#app2",
+        data:{
+          sharedState:store.state
+        },
+        methods:{
+          add:function(){
+            this.sharedState.a+=1;
+          }
+        }
+      });
+    </script>
 </body>
 </html>
