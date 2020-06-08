@@ -17,4 +17,5 @@ def audio(request):
     mc_obj = LudiferMusic.objects.get(id=id)
     with open(mc_obj.audio, "rb") as fin:
         mc = fin.read()
-    return StreamingHttpResponse(streaming_content=mc)
+    res = StreamingHttpResponse(streaming_content=mc,content_type="application/octet-stream")
+    return res
